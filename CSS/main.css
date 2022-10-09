@@ -25,7 +25,36 @@ header{
     border-radius: 5px;
 }
 
+h2 {
+    font-family: fantasy;
+    color: crimson;
+}
+h3{
 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+    font-size: medium;
+    
+}
+.container {
+    width: 100vw;
+    height: 100vw;
+    background-color: rgb(162, 162, 184);
+}
+
+.caja2 {
+    height: 50vw;
+    width: 50vw;
+    background-color: #5b5ab1;
+}
+
+
+
+
+
+
+
+        
 footer{
     background-color: rgb(24, 36, 75);
     color: aliceblue;
@@ -63,3 +92,4 @@ input[type=submit]{
     border-radius: 4px;
     cursor: pointer;
     }
+
