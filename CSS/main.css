@@ -1,40 +1,300 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@200;400;700&display=swap');
+
+:root{
+    --grey: rgb(94, 92, 92);
+    --blue-dark:rgb(10, 26, 41);
+    --blue-light:rgb(18, 45, 71);
+    --red:rgb(250, 53, 53);
+    --red-dark:rgb(129, 32, 32);
+    --negro: #393939;
+    --blanco: #ececec;
+    --sombra-ppal: #c9c9c9;
+    --sombra-sec: #ffffff;
+    --borde-negro: #00000050;
+    --marcado: rgb(127, 195, 255);
+}
+/*
+    Estilos generales para que las etiquetas no contengan propiedades
+    que nos estorben y en todos los navegadores se vean correctamente
+*/
 *{
     margin: 0;
     padding: 0;
-    font-family: Verdana;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
 }
-
-h1{
-    text-align: center;
+  /*
+  fin
+  */
+body{
+    height: 200vh;
+    background-color: var(--blue-dark);
+    font-family: 'Saira Semi Condensed', sans-serif;
 }
-
+a.actual{
+    font-weight: bold;
+}
 header{
-    background-color: rgb(24, 36, 75);
-    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px;
+    position: fixed;
     width: 100%;
-    left: 0;
-    padding: 10px; 
-    height: 50%;
+    top: 0;
+    transition: 250ms;
+    z-index: 2;
+    font-family: 'Saira Semi Condensed', sans-serif;
 }
+.nav-links{
+    position: absolute;
+    right: 0;
+    top: 5vh;
+    width: 60%;
+    height: 70vh;
+    background:var(--red-dark);/*es el color del menu hamb*/
+    
 
-.navbar{
-    background-color: brown;
-    color: aliceblue;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: menu_animation 500ms ease-in-out;
+}
+/*we will make nav-links appear
+only if hamburger menu is clicked
+Lets make class of show-nalinks*/
+.show-navlinks{
+    display: flex;
+}
+@keyframes menu_animation{
+    from{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+/*Es el 'marvel family'*/
+.logo{
     text-decoration: none;
-    padding: 5px;
-    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--red);
+    transition: 250ms;
+}
+header ul li{
+    list-style: none;
+    margin: 20px 0;
+}
+/*Letra de las pag sin scrollear*/
+header ul li a{
+    text-decoration: none;
+    padding: 10px, 30px;
+    font-size: 1rem;
+    color: rgb(245, 242, 234);
+    transition: 250ms;
+}
+header ul li a:hover{
+    color: var(--blue-dark);
+}
+/*Es el navbar scrolleado*/
+.sticky{
+    background: var(--blue-light);
+    box-shadow: 6px 6px 20px rgba(0, 0, 0,0.123);
+    backdrop-filter: blur(20px);
+}
+/*Color de las letras de hamburguesa CUANDO SCROLLEAS*/
+.sticky a{
+    color:black;
+}
+/*Color del logo SCROLLEANDO*/
+.sticky .logo{
+    color: white;
+}
+.sticky li a:hover{
+    color: var(--blue-light);
 }
 
-
-footer{
-    background-color: rgb(24, 36, 75);
-    color: aliceblue;
+.featured{
     width: 100%;
-
-    text-align: center;
-    margin-top: 10px;
+    height: 100vh;
+    /*background-image: url(/assets/bike.jpg);*/
+    
+    background-color: #000;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-/* Sing In */
+
+.hamburger-on{
+    background: url(/Imagenes/menu2.svg);
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: 250ms ease-in-out;
+}
+.card{
+    padding: 20px;
+    width: 95%;
+    border-radius: 5px;
+    backdrop-filter: blur(20px);
+}
+.card h2{
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: var(--blue-dark);
+}
+
+.btn{
+    margin-top: 20px;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 250ms;
+    background: var(--blue-dark);
+    color: white;
+}
+.btn:hover{
+    opacity: 0.9;
+}
+/*now change the button*/
+.hamburger-off{
+    padding: 9px;
+    background: url(/Imagenes/closemenu.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: 250ms ease-in-out;
+}
+
+/*now lets do it for bigger screens
+this code will run only if the screen
+width is 700px or large*/
+@media screen and (min-width:700px){
+    .sticky a{
+        color: black;
+    }
+    .nav-links{
+        display: flex;
+        flex-direction: row;
+        position: unset;
+        width: auto;
+        height: auto;
+        background: none;
+    }
+    header ul{
+        display: flex;
+    }
+    header ul li{
+        margin: 0;
+    }
+    header ul li a{
+        padding: 0;
+        margin: 5px 10px;
+        font-size: 0.8em;
+    }
+    .hamburger-on{
+        display: none;
+    }
+    .logo{
+        font-size: 22px;
+    }
+    .featured{
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .card{
+        padding: 20px;
+        background: none;
+        width: 45%;
+        backdrop-filter: none;
+    }
+}
+/*carrusel con fotos*/
+.carrousel{
+    width: 90%;
+    max-width: 120em;
+    padding: 2em;
+    color: var(--negro);
+    transition: all 0.4s ease;
+    border-radius: 1em;
+    background-color:var(--blanco);
+    box-shadow: -.3em -.3em .5em var(--sombra-ppal), -.3em -.3em .5em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+    overflow: hidden;
+}
+.carrousel.grande{
+    width: 200%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    color:var(--negro);
+    transition: all 0.4s ease;
+    border-radius: 1em;
+    background-color: var(--blanco);
+    box-shadow: -.3em -.3em .5em var(--sombra-ppal), -.3em -.3em .5em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+    padding: 2em;
+    transition: all 0.5s ease;
+    transform: translateX(0%);
+}
+.carrousel.img{
+    width: calc( 100% / 2 - 2em);
+    min-height: 10vh;
+    color: var(--negro);
+    transition: all 0.4s ease;
+    border-radius: 1em;
+    background-color: var(--blanco);
+    box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+}
+.carrousel.puntos{
+    width: 100%;
+    margin: 1em 0 0;
+    padding: 0.4em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    color: var(--negro);
+}
+.carrousel.punto{
+    width: 2em;
+    height: 2em;
+    margin: 1em 1em 0;
+    color: var(--negro);
+    transition: all 0.4s ease;
+    border-radius: 1em;
+    background-color: var(--blanco);
+    box-shadow: 0.6em 0.6em 1.2em var(--sombra-ppal), -0.6em -0.6em 1.2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+}
+.carrousel .punto.activo {
+    background-color: lightblue;
+  }
+
+main{
+    margin: 3em 1em 1em;
+    padding: 10px;
+    background-color: aqua;
+}
+
+
+/* Sing In
 .fro{
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -63,3 +323,4 @@ input[type=submit]{
     border-radius: 4px;
     cursor: pointer;
     }
+*/
