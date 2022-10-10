@@ -16,35 +16,37 @@
         <div class="hamburger-on"></div>
         <ul class="nav-links">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="movies.html">Movies</a></li>
+            <li><a href="movies.html"class="actual">Movies</a></li>
             <li><a href="tvshows.html">Tv Shows</a></li>
             <li><a href="characters.html">Characters</a></li>
             <li><a href="more.html">More</a></li>
+            <li><a href="login.html">Log In</a></li>
         </ul>
+    <script>
+        const header = document.querySelector("header");
+        const hamburger = document.querySelector(".hamburger-on");
+        const navLinks = document.querySelector(".nav-links");
+        let hamburgerOpen = false;
+    
+        window.addEventListener("scroll", function(){
+            header.classList.toggle("sticky", window.scrollY>0)
+        })
+    
+        hamburger.addEventListener("click", function(){
+            if(!hamburgerOpen){
+                navLinks.classList.toggle("show-navlinks");
+                hamburger.classList.toggle("hamburger-off");
+            }else{
+                navLinks.classList.remove("show-navlinks");
+                hamburger.classList.remove("hamburger-off");
+                hamburgerOpen = false;
+            }
+        })
+    </script>
   </header>
 
 
-  <script>
-    const header = document.querySelector("header");
-    const hamburger = document.querySelector(".hamburger-on");
-    const navLinks = document.querySelector(".nav-links");
-    let hamburgerOpen = false;
-
-    window.addEventListener("scroll", function(){
-        header.classList.toggle("sticky", window.scrollY>0)
-    })
-
-    hamburger.addEventListener("click", function(){
-        if(!hamburgerOpen){
-            navLinks.classList.toggle("show-navlinks");
-            hamburger.classList.toggle("hamburger-off");
-        }else{
-            navLinks.classList.remove("show-navlinks");
-            hamburger.classList.remove("hamburger-off");
-            hamburgerOpen = false;
-        }
-    })
-</script>
+  
 
   
 </body>
