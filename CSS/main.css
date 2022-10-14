@@ -25,9 +25,7 @@
     box-sizing: border-box;
     vertical-align: baseline;
 }
-  /*
-  fin
-  */
+  /*fin*/
 body{
     height: 200vh;
     background-color: var(--blue-dark);
@@ -98,9 +96,11 @@ header ul li a{
     font-size: 1rem;
     color: rgb(245, 242, 234);
     transition: 250ms;
+    
 }
+/*Color de las letra con el cursor encima*/
 header ul li a:hover{
-    color: var(--blue-dark);
+    color: var(--red);
 }
 /*Es el navbar scrolleado*/
 .sticky{
@@ -227,100 +227,9 @@ width is 700px or large*/
         backdrop-filter: none;
     }
 }
-/*carrusel con fotos*/
-.carrousel{
-    width: 90%;
-    max-width: 120em;
-    padding: 2em;
-    color: var(--negro);
-    transition: all 0.4s ease;
-    border-radius: 1em;
-    background-color:var(--blanco);
-    box-shadow: -.3em -.3em .5em var(--sombra-ppal), -.3em -.3em .5em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
-    overflow: hidden;
-}
-.carrousel.grande{
-    width: 200%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    color:var(--negro);
-    transition: all 0.4s ease;
-    border-radius: 1em;
-    background-color: var(--blanco);
-    box-shadow: -.3em -.3em .5em var(--sombra-ppal), -.3em -.3em .5em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
-    padding: 2em;
-    transition: all 0.5s ease;
-    transform: translateX(0%);
-}
-.carrousel.img{
-    width: calc( 100% / 2 - 2em);
-    min-height: 10vh;
-    color: var(--negro);
-    transition: all 0.4s ease;
-    border-radius: 1em;
-    background-color: var(--blanco);
-    box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
-}
-.carrousel.puntos{
-    width: 100%;
-    margin: 1em 0 0;
-    padding: 0.4em;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    color: var(--negro);
-}
-.carrousel.punto{
-    width: 2em;
-    height: 2em;
-    margin: 1em 1em 0;
-    color: var(--negro);
-    transition: all 0.4s ease;
-    border-radius: 1em;
-    background-color: var(--blanco);
-    box-shadow: 0.6em 0.6em 1.2em var(--sombra-ppal), -0.6em -0.6em 1.2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
-}
-.carrousel .punto.activo {
-    background-color: lightblue;
-  }
-
+/*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*/
 main{
     margin: 3em 1em 1em;
     padding: 10px;
-    background-color: aqua;
+    /*background-color: aqua;*/
 }
-
-
-/* Sing In
-.fro{
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 1%;
-    margin: 1% 20%;
-}
-label, input{
-    font-size: 1vw;
-}
-input[type=text]{
-    width: 80%;
-    padding: 1vw;
-    margin: 1vw;
-    display: inline-block;
-    border: 1vw;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-input[type=submit]{
-    width: 75%;
-    background-color: #4caf50;
-    color: black;
-    padding: 14px 20px;
-    margin: 10px 0px 0px 60px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    }
-*/
