@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="Imagenes/Marvel_Logo.ico">
+    <script src="js/app.js"></script>
+    <title>MARVEL</title>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Marvel Family</a>
+        <div class="hamburger-on"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="moviesandtvshows.html"class="actual">Movies & Tv Shows</a></li>
+            
+            <li><a href="characters.html">Characters</a></li>
+            <li><a href="more.html">More</a></li>
+            <li><a href="login.html">Log In</a></li>
+        </ul>
+    <script>
+        const header = document.querySelector("header");
+        const hamburger = document.querySelector(".hamburger-on");
+        const navLinks = document.querySelector(".nav-links");
+        let hamburgerOpen = false;
+    
+        window.addEventListener("scroll", function(){
+            header.classList.toggle("sticky", window.scrollY>0)
+        })
+    
+        hamburger.addEventListener("click", function(){
+            if(!hamburgerOpen){
+                navLinks.classList.toggle("show-navlinks");
+                hamburger.classList.toggle("hamburger-off");
+            }else{
+                navLinks.classList.remove("show-navlinks");
+                hamburger.classList.remove("hamburger-off");
+                hamburgerOpen = false;
+            }
+        })
+    </script>
+  </header>
+  <main>
+    <h2>MOVIES</h2>
+    <p class="movie-tv">
+        Journey into the cosmic depths of the mighty Marvel Cinematic Universe!<br><br>
+    </p>
+    <div class="contenedor-cards">
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/movie-ironman.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>Iron Man</h3>
+                <h4>2008</h4>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/movie-thor.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>Thor</h3>
+                <h4>2011</h4>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/movie-guardiansofthegalaxy.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>Guardians of the Galaxy</h3>
+                <h4>2014</h4>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/movie-spider-manhomecoming.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>Spider-Man: Homecoming</h3>
+                <h4>2017</h4>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/movie-blackpanther.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>Black Panther</h3>
+                <h4>2018</h4>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor-cards">
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/movie-blackwidow.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>Black Widow</h3>
+                <h4>2021</h4>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/movie-eternals.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>Eternals</h3>
+                <h4>2021</h4>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/movie-guardiansofthegalaxyvolume3.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>Guardians of the Galaxy Volume 3</h3>
+                <h4>MAY 5, 2023</h4>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/movie-deadpool3.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>Untitled Deadpool Movie</h3>
+                <h4>NOV 8, 2024</h4>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/movie-fantasticfour.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>Fantastic Four</h3>
+                <h4>FEB 14, 2025</h4>
+            </div>
+        </div>
+    </div>
+    <h2>TV Shows</h2>
+    <p class="movie-tv">
+        Explore the characters and stories that shape Marvel TV!<br><br>
+    </p>
+    <div class="contenedor-cards">
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/tv-wandavision.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>WandaVision</h3>
+                <h4>2021</h4>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/tv-falcws.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>The Falcon and The Winter</h3>
+                <h4>2021</h4>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/tv-loki.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>Loki | Season 1</h3>
+                <h4>2021</h4>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/tv-whatif.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>What if...? | Season 1</h3>
+                <h4>2021</h4>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="/Imagenes/tv-hawkeye.jpg" alt="">
+            </figure>
+            <div class="texto-cards">
+                <h3>Hawkeye</h3>
+                <h4>2021</h4>
+            </div>
+        </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="copy">© Copyright 2021</p>
+    <p class="copy">
+        Built with ♡ by
+        <a  class="copy1" href="#" target="_blank">Antonella Cama and Candela Magaldi</a>
+    </p>
+</footer>
+</body>
+</html>

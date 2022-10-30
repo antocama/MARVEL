@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="Imagenes/Marvel_Logo.ico">
     <script src="js/app.js"></script>
+    <script src="https://kit.fontawesome.com/c3dc2af872.js" crossorigin="anonymous"></script>
     <title>MARVEL</title>
 </head>
 <body>
   <header>
+    
     <a href="index.html" class="logo">Marvel Family</a>
         <div class="hamburger-on"></div>
         <ul class="nav-links">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="movies.html">Movies</a></li>
-            <li><a href="tvshows.html">Tv Shows</a></li>
+            <li><a href="moviesandtvshows.html">Movies & Tv Shows</a></li> 
+            
             <li><a href="characters.html">Characters</a></li>
             <li><a href="more.html"class="actual">More</a></li>
-            <li><a href="login.html">Log In</a></li>
+            
         </ul>
     <script>
         const header = document.querySelector("header");
@@ -54,30 +55,23 @@
     <div class="caja1">
      <marquee>...to locate us!</marquee> <br>
      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.527777869317!2d-73.98190438463865!3d40.7724098418547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258f502ee80f1%3A0x45ee44e6f0cd518d!2s10%20W%2066th%20St%2C%20New%20York%2C%20NY%2010023%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1665173947372!5m2!1ses!2sar" width="500" height="400" style="border: 1px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
-     <img src="/Imagenes/Logo Ubicacion.png"width="30" height="30" ; alt="Direccion">
-     <h5>Direccion: 10 W 66th St
-     10 W 66th St, New York, NY 10023, EE. UU.</h5>
-     <img src="/Imagenes/Telefono transp.jpg" width="30" height="30" ; alt="Telefono">
-     <h5>Telefono: +03519 331 025</h5>
+     <i class="fa-sharp fa-solid fa-location-dot"></i>
+     <h4>Direccion: 10 W 66th St
+     10 W 66th St, New York, NY 10023, EE. UU.</h4>
+     <i class="fa-sharp fa-solid fa-phone"></i> <br>
+     <h4>Telefono: +03519 331 025</h4>
     </div>
     <div class="caja2">
          <marquee>Our team will contact you!</marquee>
-
-         <form name="f1" action="Informacion.html">
+         <form id="form" action="https://formspree.io/f/xlevwwlz" method="POST" class="form" onsubmit="return validacion();">
+          
+          <label for="name" class="formulario">Name <span>*</span></label>
+            <input name="name" required type="text" id="Name" placeholder="Name"><br>
+            <label>
+              Your email:
+              <input type="email" name="email" rows="0"></label> <br>
+                  
            <table>
-             <tr>
-               <td>Name: </td>
-               <td><input type="text" id="Name" size="25" maxlength="40" /></td>
-             </tr>
-             <tr>
-               <td>Password: </td>
-               <td><input type="password" id="password" /></td>
-             </tr>
-             <tr>
-               <td>E-mail: </td>
-               <td><input type="E-mail" id="E-mail" /></td>
-             </tr>
-
              <tr>
                <td>Themes of interest:</td>
                <td><input type="checkbox" name="Spiderman" id="Spiderman">Spiderman</td>
@@ -113,8 +107,7 @@
                </td>
              </tr>
              
-             
-             
+                      
              <tr>
                <td>Payment Methods: </td>
                <td><input type="radio" name="payment" id="Cash">
@@ -130,35 +123,109 @@
                <td><input type="radio" name="pago" id="debit">Debito</td>
              </tr>
              
-             <tr>
-               <td valign="top">Comments:</td>
-               <td>
-                 <textarea name="Comments" id="Comments" rows="7" cols="30" placeholder="Write here your comments..."></textarea>
-               </td>
-             </tr>
-             <tr>
-               <td colspan="2" align ="center">
-                 <input type="submit" value="Send data" /><br>
-                 <input type="reset"  value="Cancel shipping" />
-               </td>
-             </tr>
-           </table>
+             
+            </table>
+
+                      
+            <label>
+              Your message: <br>
+              <textarea name="message" cols="30" rows="4"></textarea>
+            </label> <br><br>
+            <!-- your other form fields go here -->
+            <i class="fa-sharp fa-solid fa-paper-plane"></i>
+            <button id="botonenviar" type="submit" class="btn primary full" aling="center">Send message</button>
+          </form>
+          <a href="mailto:arq.magaldi@gmail.com" id="idform"></a>
+   
+
+
          </form>
-     
+     <script>
+      valor = document.getElementById("name").value;
+    
+    if( valor == null || valor.length == 0) 
+    {
+        
+        document.getElementById('mensaje').innerHTML = "Tenes que completar el Nombre!";
+        elemento = document.getElementById('nombre');
+        elemento.focus();
+        
+        return false;
+    }
+    return true;  
+     indice = document.getElementById("opciones").selectedIndex;
+            
+            if( indice == null || indice == 0 ) 
+            {
+                document.getElementById('mensaje').innerHTML = "You must to select a country";
+                return false;
+            }
+            
+            return true;
+             valor = document.getElementById("email").value;
+            
+              
+            if (!(/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|ar)+$/.test(valor)))
+            {
+                document.getElementById('mensaje').innerHTML = "Email not valid" ;
+                
+                elemento = document.getElementById('email');
+                elemento.value = '';
+                elemento.focus();
+
+                return false;
+            }
+            
+            return true;
+
+            elemento = document.getElementById("checkbox");
+            
+            if( !elemento.checked ) 
+            {
+                document.getElementById('mensaje').innerHTML = "You must to select a theme" ;
+                return false;
+            }
+            
+            return true;
+             
+            opciones = document.getElementsByName("payment");
+
+            var seleccionado = false;
+            for(var i=0; i < opciones.length; i++) 
+            {
+                if(opciones[i].checked) 
+                {
+                    seleccionado = true;
+                    break;
+                }
+            }
+
+            if(!seleccionado) 
+            {
+                document.getElementById('mensaje').innerHTML = "You must to select a payment method" ;
+                return false;
+            }
+            
+            
+            return true;  
+     </script>
    </div>
  </div>
+ <br><br>
+ <audio controls autoplay>
+  <source src="Imagenes/cancion-de-avengers-infinity-war.mp3" type="audio/mp3">
+</audio>
    <br><br><br><br><br>
    <p>Send me sugestion about the web site: <a href="mailto:ejemplo@gmail.com">ejemplo@gmail.com</a> </p>
    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
- 
+   
  </menu>
- <footer>
-   <br>
-   <p>All rights reserved @2022</p>
-   <br>
- </footer>
+ <footer class="footer">
+  <p class="copy">© Copyright 2021</p>
+  <p class="copy">
+      Built with ♡ by
+      <a  class="copy1" href="#" target="_blank">Antonella Cama and Candela Magaldi</a>
+  </p>
+</footer>
 </body>
 </html>
-  
-
-  

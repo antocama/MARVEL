@@ -13,6 +13,7 @@
     --sombra-sec: #ffffff;
     --borde-negro: #00000050;
     --marcado: rgb(127, 195, 255);
+    --naranjita:#fAA43D;
 }
 /*
     Estilos generales para que las etiquetas no contengan propiedades
@@ -27,7 +28,7 @@
 }
   /*fin*/
 body{
-    height: 200vh;
+    /*height: 200vh;*/
     background-color: var(--blue-dark);
     font-family: 'Saira Semi Condensed', sans-serif;
 }
@@ -61,9 +62,7 @@ header{
     align-items: center;
     animation: menu_animation 500ms ease-in-out;
 }
-/*we will make nav-links appear
-only if hamburger menu is clicked
-Lets make class of show-nalinks*/
+/*hacer aparecer los navlinks si la hambur es cliclead*/
 .show-navlinks{
     display: flex;
 }
@@ -117,7 +116,7 @@ header ul li a:hover{
     color: white;
 }
 .sticky li a:hover{
-    color: var(--blue-light);
+    color: var(--blanco);
 }
 
 .featured{
@@ -216,16 +215,7 @@ width is 700px or large*/
     .logo{
         font-size: 22px;
     }
-    .featured{
-        justify-content: center;
-        align-items: flex-end;
-    }
-    .card{
-        padding: 20px;
-        background: none;
-        width: 45%;
-        backdrop-filter: none;
-    }
+    
 }
 /*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*/
 main{
@@ -234,7 +224,7 @@ main{
     /*background-color: aqua;*/
 }
 
-
+/*cande*/
 .container {
     
     display: inline-flex;
@@ -255,7 +245,6 @@ main{
     width: 40vw;
     background-color: #7d7dab;
 }
-
 .caja2 {
     transform: rotate(-5deg);
     border: 2px black solid;
@@ -264,12 +253,266 @@ main{
     width: 40vw;
     background-color: #7d7dab;
 }
-
-
 marquee {
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: xx-large;
     color: rgb(41, 20, 146);
 }
+/*fin cande*/
+.contenedor{
+    width: 95%;
+    /*max-width: 1000px;*/
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 10px; /*contorno de todo, le da margen, para adentro de la pag*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(8, auto);
 
+    grid-template-areas: "header header header"
+                         "contenido contenido contenido"
+                         "tarjeta1 tarjeta2 tarjeta3"
+                         "texto1 texto1 texto1"
+                         "img4 img4 texto-stan"
+                         "texto2 texto2 texto2"
+                         "img3 img3 img3" 
+                         "footer footer footer";
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .tarjeta1,
+.contenedor .tarjeta2,
+.contenedor .tarjeta3,
+.contenedor .texto1,
+.contenedor .texto2,
+.contenedor .texto-stan,
+.contenedor .img3,
+.contenedor .img4,
+.contenedor .img-texto2,
+.contenedor .footer,
+.contenedor .contenido
+/*si queres trabajar sin clases es sin el punto*/
+{
+    /*background: #fff;*/
+    padding: 20px;
+    border-radius: 4px;
+}
+.contenedor .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px; /*opciona dejar o no*/
+    position: sticky;
+    width: 100%;
+    top: 0;
+    transition: 250ms;
+    z-index: 2;
+    
+    grid-area: header;
+}
+.contenedor .contenido{
+    grid-area: contenido;
+    min-height: unset;
+    max-height: unset;
+    height: 340px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: url(Imagenes/fondo2.jpg);
+    background-size: cover;
+    background-position: center;
+    
+    /*grid-column: span 2;*/
+    /*para que abarque dos columnas*/
+}
+.contenido{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+}
+img{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.contenedor .tarjeta1,
+.contenedor .tarjeta2,
+.contenedor .tarjeta3{
+    /*grid-column: 3 / 4;*/
+    background: #fAA43D;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    /*grid-row: 2 / 4;*/
+}
+/*grid para las estructuras y flexbox para cuando queres acomodar elementos horizontal o vertical*/
+
+.contenedor .tarjeta1{
+    grid-area: tarjeta1;
+}
+.contenedor .tarjeta2{
+    grid-area: tarjeta2;
+}
+.contenedor .tarjeta3{
+    grid-area: tarjeta3;
+}
+.contenedor .texto1{
+    background: #55a8fd;
+    color: black;
+    padding: 1.25rem;
+    text-align: center;
+    margin: 1.25rem 0 0;
+    grid-area: texto1;
+}
+.contenedor .texto2{
+    background: #55a8fd;
+    color: black;
+    padding: 1.25rem;
+    text-align: center;
+    margin: 2rem 0 0;
+    grid-area: texto2;
+}
+.contenedor .img-texto2{
+    padding: 1.25rem;
+    align-items: center;
+    text-align: center;
+    grid-area: img-texto2;
+    overflow: hidden;
+}
+.contenedor .img3{
+    width: 100%;
+    padding: 1.25rem;
+    align-items: center;
+    text-align: center;
+    grid-area: img3;
+    overflow: hidden;
+}
+.contenedor .img4{
+    width: 100%;
+    padding: 1.25rem;
+    align-items: center;
+    text-align: center;
+    grid-area: img4;
+    overflow: hidden;
+}
+.texto-stan{
+    padding: 1.25rem;
+    text-align: center;
+    margin: 2rem 0 0;
+    color: var(--blanco);
+    grid-area: texto-stan;
+}
+.contenedor .footer{
+    background: #12203e;
+    color: #fff;
+    padding: 1.25rem;
+    text-align: center;
+    margin: 2rem 0 0;
+    grid-area: footer;
+
+    /*grid-column: span 3;*/
+}
+footer{
+    background: #12203e;
+    color: #fff;
+    padding: 1.25rem;
+    text-align: center;
+    margin: 2rem 0 0;
+}
+.copy a{
+    color: var(--naranjita);
+}
+.contenedor-cards{
+    width: 100%;
+    display: flex;
+    /*max-width: 1100px;*/
+    grid-area: contenedor-cards;
+}
+.card{
+    width: 700px;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--negro);
+    color: var(--blanco);
+    box-shadow: 0px 1px 10px rgba(255,255,255,255.2);
+    cursor: default;
+    transition: all 400ms ease;
+
+}
+.card:hover{
+    box-shadow: 5px 5px 20px rgba(255,255,255,255.4);
+    transform: translateY(-3%);
+}
+.card img{
+    display: block;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;/*210px*/
+}
+.card .texto-cards{
+    padding: 15px;
+    text-align: left;
+}
+
+.card .texto-cards h3{
+    margin-bottom: 15px;
+}
+.card .texto-cards h4{
+    text-align: right;
+}
+
+p ,h1 ,h2{
+    color: var(--blanco);
+}
+h2{
+    text-align: center;
+    margin-top: 50px;
+}
+.movie-tv{
+    text-align: center;
+}
+@media screen and (min-width: 375px){
+    .contenido img {
+      height: 290px;
+  } 
+  }
+  @media screen and (max-width:1550px) {
+      .contenido .parrafo3{
+          display: none;
+       } 
+  }
+  @media screen and (max-width:900px) {
+      .contenido .parrafo2{
+          display: none;
+       }
+  }
+  @media screen and (max-width:400px) {
+      .contenido .parrafo1{
+          display: none;
+       } 
+  }
+@media screen and (max-width: 768px) {
+    .contenedor{
+        grid-template-areas: "header header header"
+                            "contenido contenido contenido"
+                            "tarjeta1 tarjeta2 tarjeta3"
+                            "texto1 texto1 texto1"
+                            "img4 img4 img4"
+                            "texto-stan texto-stan texto-stan"
+                            "texto2 texto2 texto2"
+                            "img3 img3 img3" 
+                            "footer footer footer";
+    }
+    
+}
