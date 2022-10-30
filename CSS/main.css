@@ -319,7 +319,7 @@ marquee {
     position: relative;
     display: flex;
     align-items: center;
-    background: url(Imagenes/fondo2.jpg);
+    background: url(../Imagenes/fondo2.jpg);
     background-size: cover;
     background-position: center;
     
